@@ -16,7 +16,8 @@ class LoginViewModel: ObservableObject {
     
     func login() async {
         do {
-            try await service.createAppKey()
+            let appKeyResponse = try await service.createAppKey()
+            try await service.createOauthKey(email: "demo", password: "test", appkey: appKeyResponse.appkey)
         }
         catch {
             print("error")

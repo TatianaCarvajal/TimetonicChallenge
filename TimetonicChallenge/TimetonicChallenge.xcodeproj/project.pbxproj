@@ -21,6 +21,7 @@
 		75325F402C2F0E2D002E5635 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F3F2C2F0E2D002E5635 /* ServiceError.swift */; };
 		75325F422C2F12FD002E5635 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F412C2F12FD002E5635 /* ErrorResponse.swift */; };
 		75325F442C2F19B8002E5635 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F432C2F19B7002E5635 /* HttpMethod.swift */; };
+		75325F462C2F5065002E5635 /* OauthKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F452C2F5065002E5635 /* OauthKeyResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		75325F3F2C2F0E2D002E5635 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		75325F412C2F12FD002E5635 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		75325F432C2F19B7002E5635 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		75325F452C2F5065002E5635 /* OauthKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthKeyResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				75325F3B2C2F034F002E5635 /* AppKeyResponse.swift */,
 				75325F412C2F12FD002E5635 /* ErrorResponse.swift */,
+				75325F452C2F5065002E5635 /* OauthKeyResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				75325F362C2F01D0002E5635 /* LoginViewModel.swift in Sources */,
 				75325F402C2F0E2D002E5635 /* ServiceError.swift in Sources */,
 				75325F392C2F0204002E5635 /* AuthServiceRepository.swift in Sources */,
+				75325F462C2F5065002E5635 /* OauthKeyResponse.swift in Sources */,
 				75325F422C2F12FD002E5635 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
