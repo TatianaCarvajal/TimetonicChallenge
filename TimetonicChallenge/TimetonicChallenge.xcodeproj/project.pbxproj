@@ -23,6 +23,8 @@
 		75325F442C2F19B8002E5635 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F432C2F19B7002E5635 /* HttpMethod.swift */; };
 		75325F462C2F5065002E5635 /* OauthKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F452C2F5065002E5635 /* OauthKeyResponse.swift */; };
 		75325F482C2F6566002E5635 /* SessKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F472C2F6566002E5635 /* SessKeyResponse.swift */; };
+		75325F4A2C2F74AC002E5635 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F492C2F74AC002E5635 /* LoginViewModelTests.swift */; };
+		75325F4C2C2F7622002E5635 /* AuthServiceRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F4B2C2F7622002E5635 /* AuthServiceRepositoryMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		75325F432C2F19B7002E5635 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		75325F452C2F5065002E5635 /* OauthKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthKeyResponse.swift; sourceTree = "<group>"; };
 		75325F472C2F6566002E5635 /* SessKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessKeyResponse.swift; sourceTree = "<group>"; };
+		75325F492C2F74AC002E5635 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		75325F4B2C2F7622002E5635 /* AuthServiceRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceRepositoryMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				75325F1B2C2F0082002E5635 /* TimetonicChallengeTests.swift */,
+				75325F492C2F74AC002E5635 /* LoginViewModelTests.swift */,
+				75325F4B2C2F7622002E5635 /* AuthServiceRepositoryMock.swift */,
 			);
 			path = TimetonicChallengeTests;
 			sourceTree = "<group>";
@@ -326,6 +332,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75325F4A2C2F74AC002E5635 /* LoginViewModelTests.swift in Sources */,
+				75325F4C2C2F7622002E5635 /* AuthServiceRepositoryMock.swift in Sources */,
 				75325F1C2C2F0082002E5635 /* TimetonicChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

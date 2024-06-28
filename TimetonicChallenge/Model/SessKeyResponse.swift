@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SessKeyResponse: Codable {
+struct SessKeyResponse: Codable, Equatable {
     var sessKey: String
     
     enum CodingKeys: String, CodingKey {
