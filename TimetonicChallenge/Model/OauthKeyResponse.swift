@@ -8,6 +8,11 @@
 import Foundation
 
 struct OauthKeyResponse: Codable {
-    var oauthkey: String
-    var o_u: String
+    var oAuthKey: String
+    var oAuthUser: String
+    
+    enum CodingKeys: String, CodingKey {
+        case oAuthKey = "oauthkey"
+        case oAuthUser = "o_u"
+    }
 }

@@ -22,6 +22,7 @@
 		75325F422C2F12FD002E5635 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F412C2F12FD002E5635 /* ErrorResponse.swift */; };
 		75325F442C2F19B8002E5635 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F432C2F19B7002E5635 /* HttpMethod.swift */; };
 		75325F462C2F5065002E5635 /* OauthKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F452C2F5065002E5635 /* OauthKeyResponse.swift */; };
+		75325F482C2F6566002E5635 /* SessKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F472C2F6566002E5635 /* SessKeyResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		75325F412C2F12FD002E5635 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		75325F432C2F19B7002E5635 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		75325F452C2F5065002E5635 /* OauthKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthKeyResponse.swift; sourceTree = "<group>"; };
+		75325F472C2F6566002E5635 /* SessKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessKeyResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				75325F3B2C2F034F002E5635 /* AppKeyResponse.swift */,
 				75325F412C2F12FD002E5635 /* ErrorResponse.swift */,
 				75325F452C2F5065002E5635 /* OauthKeyResponse.swift */,
+				75325F472C2F6566002E5635 /* SessKeyResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				75325F3C2C2F034F002E5635 /* AppKeyResponse.swift in Sources */,
 				75325F3E2C2F04D2002E5635 /* AuthServiceFacade.swift in Sources */,
 				75325F0D2C2F0081002E5635 /* LoginView.swift in Sources */,
+				75325F482C2F6566002E5635 /* SessKeyResponse.swift in Sources */,
 				75325F0B2C2F0081002E5635 /* TimetonicChallengeApp.swift in Sources */,
 				75325F442C2F19B8002E5635 /* HttpMethod.swift in Sources */,
 				75325F362C2F01D0002E5635 /* LoginViewModel.swift in Sources */,

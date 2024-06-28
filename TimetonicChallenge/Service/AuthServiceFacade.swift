@@ -19,7 +19,6 @@ class AuthServiceFacade: AuthServiceRepository {
         requestUrl.httpBody = postData
         let (data, _) = try await URLSession.shared.data(for: requestUrl)
         let decoder = JSONDecoder()
-        _ = String(data: data, encoding: .utf8)
         do {
             let result = try decoder.decode(AppKeyResponse.self, from: data)
             return result
@@ -41,10 +40,29 @@ class AuthServiceFacade: AuthServiceRepository {
         requestUrl.httpBody = postData
         let (data, _) = try await URLSession.shared.data(for: requestUrl)
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        _ = String(data: data, encoding: .utf8)
         do {
             let result = try decoder.decode(OauthKeyResponse.self, from: data)
+            return result
+        }
+        catch {
+            let error = try decoder.decode(ErrorResponse.self, from: data)
+            throw ServiceError.serviceFailed(error)
+        }
+    }
+    
+    func createSessKey(oauthUser: String, oauthKey: String) async throws -> SessKeyResponse {
+        guard let url = URL(string: "https://timetonic.com/live/api.php") else {
+            throw ServiceError.urlDoesNotExist
+        }
+        var requestUrl = URLRequest(url: url)
+        requestUrl.httpMethod = HttpMethod.post.rawValue
+        let parameters = "req=createSesskey&o_u=\(oauthUser)&oauthkey=\(oauthKey)"
+        let postData =  parameters.data(using: .utf8)
+        requestUrl.httpBody = postData
+        let (data, _) = try await URLSession.shared.data(for: requestUrl)
+        let decoder = JSONDecoder()
+        do {
+            let result = try decoder.decode(SessKeyResponse.self, from: data)
             return result
         }
         catch {

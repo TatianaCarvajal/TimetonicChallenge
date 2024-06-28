@@ -11,7 +11,7 @@ struct ErrorResponse: Codable {
     var errorMessage: String
     var errorCode: String
     
-    enum Codingkeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case errorMessage = "errorMsg"
         case errorCode
     }
