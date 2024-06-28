@@ -14,6 +14,10 @@
 		75325F1C2C2F0082002E5635 /* TimetonicChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F1B2C2F0082002E5635 /* TimetonicChallengeTests.swift */; };
 		75325F262C2F0082002E5635 /* TimetonicChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F252C2F0082002E5635 /* TimetonicChallengeUITests.swift */; };
 		75325F282C2F0082002E5635 /* TimetonicChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F272C2F0082002E5635 /* TimetonicChallengeUITestsLaunchTests.swift */; };
+		75325F362C2F01D0002E5635 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F352C2F01D0002E5635 /* LoginViewModel.swift */; };
+		75325F392C2F0204002E5635 /* AuthServiceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F382C2F0204002E5635 /* AuthServiceRepository.swift */; };
+		75325F3C2C2F034F002E5635 /* AppKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F3B2C2F034F002E5635 /* AppKeyResponse.swift */; };
+		75325F3E2C2F04D2002E5635 /* AuthServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F3D2C2F04D2002E5635 /* AuthServiceFacade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		75325F212C2F0082002E5635 /* TimetonicChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimetonicChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75325F252C2F0082002E5635 /* TimetonicChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetonicChallengeUITests.swift; sourceTree = "<group>"; };
 		75325F272C2F0082002E5635 /* TimetonicChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetonicChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		75325F352C2F01D0002E5635 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		75325F382C2F0204002E5635 /* AuthServiceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceRepository.swift; sourceTree = "<group>"; };
+		75325F3B2C2F034F002E5635 /* AppKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyResponse.swift; sourceTree = "<group>"; };
+		75325F3D2C2F04D2002E5635 /* AuthServiceFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceFacade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,9 @@
 		75325EFE2C2F0081002E5635 = {
 			isa = PBXGroup;
 			children = (
+				75325F3A2C2F0227002E5635 /* Model */,
+				75325F372C2F01F4002E5635 /* Service */,
+				75325F342C2F01B8002E5635 /* ViewModel */,
 				75325F092C2F0081002E5635 /* TimetonicChallenge */,
 				75325F1A2C2F0082002E5635 /* TimetonicChallengeTests */,
 				75325F242C2F0082002E5635 /* TimetonicChallengeUITests */,
@@ -125,6 +136,31 @@
 				75325F272C2F0082002E5635 /* TimetonicChallengeUITestsLaunchTests.swift */,
 			);
 			path = TimetonicChallengeUITests;
+			sourceTree = "<group>";
+		};
+		75325F342C2F01B8002E5635 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				75325F352C2F01D0002E5635 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		75325F372C2F01F4002E5635 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				75325F382C2F0204002E5635 /* AuthServiceRepository.swift */,
+				75325F3D2C2F04D2002E5635 /* AuthServiceFacade.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		75325F3A2C2F0227002E5635 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75325F3B2C2F034F002E5635 /* AppKeyResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75325F3C2C2F034F002E5635 /* AppKeyResponse.swift in Sources */,
+				75325F3E2C2F04D2002E5635 /* AuthServiceFacade.swift in Sources */,
 				75325F0D2C2F0081002E5635 /* ContentView.swift in Sources */,
 				75325F0B2C2F0081002E5635 /* TimetonicChallengeApp.swift in Sources */,
+				75325F362C2F01D0002E5635 /* LoginViewModel.swift in Sources */,
+				75325F392C2F0204002E5635 /* AuthServiceRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
