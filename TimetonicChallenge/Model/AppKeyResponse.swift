@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct AppKeyResponse: Codable {
+    var appkey: String
+}
+
+struct AppKeyRequestBody: Codable {
+    var req: String
+    var version: String
+    var appname: String
+    
+}

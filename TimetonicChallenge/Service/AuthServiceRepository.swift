@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol AuthServiceRepository {
+    func createAppKey() async throws -> AppKeyResponse
+}

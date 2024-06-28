@@ -7,4 +7,19 @@
 
 import Foundation
 
-class LoginViewModel {}
+class LoginViewModel: ObservableObject {
+    let service: AuthServiceRepository
+    
+    init(service: AuthServiceRepository) {
+        self.service = service
+    }
+    
+    func login() async {
+        do {
+            try await service.createAppKey()
+        }
+        catch {
+            print("error")
+        }
+    }
+}
