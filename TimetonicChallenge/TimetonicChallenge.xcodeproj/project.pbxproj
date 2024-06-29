@@ -26,6 +26,10 @@
 		75325F4A2C2F74AC002E5635 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F492C2F74AC002E5635 /* LoginViewModelTests.swift */; };
 		75325F4C2C2F7622002E5635 /* AuthServiceRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F4B2C2F7622002E5635 /* AuthServiceRepositoryMock.swift */; };
 		75325F502C2FB4C4002E5635 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F4E2C2F987B002E5635 /* BookListView.swift */; };
+		75325F522C2FBD06002E5635 /* BookListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F512C2FBD06002E5635 /* BookListResponse.swift */; };
+		75325F542C2FBF1C002E5635 /* BookServiceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F532C2FBF1C002E5635 /* BookServiceRepository.swift */; };
+		75325F562C2FBFD8002E5635 /* BookServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F552C2FBFD8002E5635 /* BookServiceFacade.swift */; };
+		75325F582C2FC1A9002E5635 /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F572C2FC1A9002E5635 /* BookListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		75325F492C2F74AC002E5635 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		75325F4B2C2F7622002E5635 /* AuthServiceRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceRepositoryMock.swift; sourceTree = "<group>"; };
 		75325F4E2C2F987B002E5635 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
+		75325F512C2FBD06002E5635 /* BookListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListResponse.swift; sourceTree = "<group>"; };
+		75325F532C2FBF1C002E5635 /* BookServiceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookServiceRepository.swift; sourceTree = "<group>"; };
+		75325F552C2FBFD8002E5635 /* BookServiceFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookServiceFacade.swift; sourceTree = "<group>"; };
+		75325F572C2FC1A9002E5635 /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				75325F352C2F01D0002E5635 /* LoginViewModel.swift */,
+				75325F572C2FC1A9002E5635 /* BookListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -171,6 +180,8 @@
 				75325F3D2C2F04D2002E5635 /* AuthServiceFacade.swift */,
 				75325F3F2C2F0E2D002E5635 /* ServiceError.swift */,
 				75325F432C2F19B7002E5635 /* HttpMethod.swift */,
+				75325F532C2FBF1C002E5635 /* BookServiceRepository.swift */,
+				75325F552C2FBFD8002E5635 /* BookServiceFacade.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 				75325F412C2F12FD002E5635 /* ErrorResponse.swift */,
 				75325F452C2F5065002E5635 /* OauthKeyResponse.swift */,
 				75325F472C2F6566002E5635 /* SessKeyResponse.swift */,
+				75325F512C2FBD06002E5635 /* BookListResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,12 +342,16 @@
 				75325F0D2C2F0081002E5635 /* LoginView.swift in Sources */,
 				75325F482C2F6566002E5635 /* SessKeyResponse.swift in Sources */,
 				75325F0B2C2F0081002E5635 /* TimetonicChallengeApp.swift in Sources */,
+				75325F582C2FC1A9002E5635 /* BookListViewModel.swift in Sources */,
 				75325F442C2F19B8002E5635 /* HttpMethod.swift in Sources */,
 				75325F362C2F01D0002E5635 /* LoginViewModel.swift in Sources */,
 				75325F502C2FB4C4002E5635 /* BookListView.swift in Sources */,
 				75325F402C2F0E2D002E5635 /* ServiceError.swift in Sources */,
+				75325F562C2FBFD8002E5635 /* BookServiceFacade.swift in Sources */,
 				75325F392C2F0204002E5635 /* AuthServiceRepository.swift in Sources */,
+				75325F542C2FBF1C002E5635 /* BookServiceRepository.swift in Sources */,
 				75325F462C2F5065002E5635 /* OauthKeyResponse.swift in Sources */,
+				75325F522C2FBD06002E5635 /* BookListResponse.swift in Sources */,
 				75325F422C2F12FD002E5635 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
