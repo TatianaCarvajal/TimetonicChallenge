@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var viewModel = LoginViewModel(service: AuthServiceFacade())
-    @State var shouldGoToBookList: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -40,10 +39,10 @@ struct LoginView: View {
             }
             .onChange(of: viewModel.state) { oldValue, newValue in
                 if let sessionKey = viewModel.state.sessionKey {
-                    shouldGoToBookList = true
+                    viewModel.shouldGoToBookList = true
                 }
             }
-            .navigationDestination(isPresented: $shouldGoToBookList) {
+            .navigationDestination(isPresented: $viewModel.shouldGoToBookList) {
                 BookListView()
             }
         }

@@ -26,6 +26,7 @@ class LoginViewModel: ObservableObject {
     @Published var password = ""
     @Published var state = State.idle
     @Published var isShowingError = false
+    @Published var shouldGoToBookList: Bool = false
     
     let service: AuthServiceRepository
     
