@@ -11,6 +11,44 @@ struct LoginView: View {
     @StateObject var viewModel = LoginViewModel(service: AuthServiceFacade())
     
     var body: some View {
+        NavigationStack {
+            VStack {
+                switch viewModel.state {
+                case .idle: initialView
+                case .loading: ProgressView()
+                case .success(let sessionKey):
+                    EmptyView()
+                case .error(let error):
+                    ContentUnavailableView(
+                        label: {
+                            Label("Login failed try again later", systemImage: "lock.slash.fill")
+                        },
+                        description: {
+                            Text("Please check your username or password")
+                        },
+                        actions: {
+                            Button("Try again") {
+                                Task {
+                                    viewModel.state = .idle
+                                }
+                            }
+                        }
+                    )
+                    .offset(y: -50)
+                }
+            }
+            .onChange(of: viewModel.state) { oldValue, newValue in
+                if let sessionKey = viewModel.state.sessionKey {
+                    viewModel.shouldGoToBookList = true
+                }
+            }
+            .navigationDestination(isPresented: $viewModel.shouldGoToBookList) {
+                BookListView()
+            }
+        }
+    }
+    
+    var initialView: some View {
         VStack {
             TextField("", text: $viewModel.email, prompt: Text("Insert your Email").foregroundColor(.black.opacity(0.7)))
                 .padding()

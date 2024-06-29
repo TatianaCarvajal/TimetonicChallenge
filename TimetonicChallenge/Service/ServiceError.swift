@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ServiceError: Error {
+enum ServiceError: Error, Equatable {
     case urlDoesNotExist
     case noDataFound
     case serviceFailed(ErrorResponse)

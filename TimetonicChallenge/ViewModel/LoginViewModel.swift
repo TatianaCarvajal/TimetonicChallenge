@@ -7,20 +7,28 @@
 
 import Foundation
 
+@MainActor
 class LoginViewModel: ObservableObject {
-    enum State {
+    enum State: Equatable {
         case loading
         case error(ServiceError)
         case idle
         case success(SessKeyResponse)
+        
+        var sessionKey: String? {
+            if case let .success(value) = self {
+                return value.sessKey
+            } else { return nil }
+        }
     }
+    
     @Published var email = ""
     @Published var password = ""
     @Published var state = State.idle
     @Published var isShowingError = false
+    @Published var shouldGoToBookList: Bool = false
     
     let service: AuthServiceRepository
-    
     
     init(service: AuthServiceRepository) {
         self.service = service
