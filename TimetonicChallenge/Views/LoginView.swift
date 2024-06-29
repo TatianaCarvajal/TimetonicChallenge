@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject var viewModel = LoginViewModel(service: AuthServiceFacade())
+    @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
         NavigationStack {
@@ -16,25 +16,45 @@ struct LoginView: View {
                 switch viewModel.state {
                 case .idle: initialView
                 case .loading: ProgressView()
-                case .success(let sessionKey):
-                    EmptyView()
+                case .success:
+                    initialView
                 case .error(let error):
-                    ContentUnavailableView(
-                        label: {
-                            Label("Login failed try again later", systemImage: "lock.slash.fill")
-                        },
-                        description: {
-                            Text("Please check your username or password")
-                        },
-                        actions: {
-                            Button("Try again") {
-                                Task {
-                                    viewModel.state = .idle
+                    switch error {
+                    case .urlDoesNotExist, .noDataFound:
+                        ContentUnavailableView(
+                            label: {
+                                Label("Login failed try again later", systemImage: "lock.slash.fill")
+                            },
+                            description: {
+                                Text("Please check your username or password")
+                            },
+                            actions: {
+                                Button("Try again") {
+                                    Task {
+                                        viewModel.state = .idle
+                                    }
                                 }
                             }
-                        }
-                    )
-                    .offset(y: -50)
+                        )
+                        .offset(y: -50)
+                    case .serviceFailed(let errorResponse):
+                        ContentUnavailableView(
+                            label: {
+                                Label("Login failed try again later, code: \(errorResponse.errorCode)", systemImage: "lock.slash.fill")
+                            },
+                            description: {
+                                Text(errorResponse.errorMessage)
+                            },
+                            actions: {
+                                Button("Try again") {
+                                    Task {
+                                        viewModel.state = .idle
+                                    }
+                                }
+                            }
+                        )
+                        .offset(y: -50)
+                    }
                 }
             }
             .onChange(of: viewModel.state) { oldValue, newValue in
@@ -43,7 +63,9 @@ struct LoginView: View {
                 }
             }
             .navigationDestination(isPresented: $viewModel.shouldGoToBookList) {
-                BookListView()
+                if let user = viewModel.authUser {
+                    BookListView(viewModel: BookListViewModel(service: BookServiceFacade(), user: user))
+                }
             }
         }
     }
@@ -79,5 +101,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(viewModel: LoginViewModel(service: AuthServiceFacade()))
 }

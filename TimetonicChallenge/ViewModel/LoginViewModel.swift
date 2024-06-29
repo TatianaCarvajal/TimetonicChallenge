@@ -29,6 +29,7 @@ class LoginViewModel: ObservableObject {
     @Published var shouldGoToBookList: Bool = false
     
     let service: AuthServiceRepository
+    var authUser: String?
     
     init(service: AuthServiceRepository) {
         self.service = service
@@ -40,10 +41,18 @@ class LoginViewModel: ObservableObject {
             let appKeyResponse = try await service.createAppKey()
             let oauthResponse = try await service.createOauthKey(email: email, password: password, appkey: appKeyResponse.appkey)
             let sessKeyResponse = try await service.createSessKey(oauthUser: oauthResponse.oAuthUser, oauthKey: oauthResponse.oAuthKey)
+            // The sesskey must be stored using keychain but I don't know how to use it properly
+            UserDefaults.standard.setValue(sessKeyResponse.sessKey, forKey: "sessKey")
+            authUser = oauthResponse.oAuthUser
             state = .success(sessKeyResponse)
         }
         catch {
-            state = .error(.urlDoesNotExist)
+            if let serviceError = error as? ServiceError {
+                state = .error(serviceError)
+            } else {
+                state = .error(.noDataFound)
+                isShowingError = true
+            }
         }
     }
 }
