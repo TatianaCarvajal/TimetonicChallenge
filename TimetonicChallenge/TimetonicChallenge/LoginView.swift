@@ -12,15 +12,31 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TextField("", text: $viewModel.email, prompt: Text("Insert your Email").foregroundColor(.black.opacity(0.7)))
+                .padding()
+                .background(Color.black.opacity(0.2))
+                .foregroundStyle(.black)
+                .cornerRadius(12)
+            
+            TextField("", text: $viewModel.password, prompt: Text("Insert your password").foregroundColor(.black.opacity(0.7)))
+                .padding()
+                .background(Color.black.opacity(0.2))
+                .foregroundStyle(.black)
+                .cornerRadius(12)
+            
+            Button(action: {
+                Task {
+                    await viewModel.login()
+                }
+            }, label: {
+                Text("Login")
+                    .foregroundStyle(Color.white)
+                    .padding()
+                    .background(Color.blue.cornerRadius(12))
+            })
+            .padding()
         }
-        .padding()
-        .task {
-            await viewModel.login()
-        }
+        .padding(.horizontal, 30)
     }
 }
 

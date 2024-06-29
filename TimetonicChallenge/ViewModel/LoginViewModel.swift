@@ -14,9 +14,13 @@ class LoginViewModel: ObservableObject {
         case idle
         case success(SessKeyResponse)
     }
+    @Published var email = ""
+    @Published var password = ""
+    @Published var state = State.idle
+    @Published var isShowingError = false
     
     let service: AuthServiceRepository
-    var state = State.idle
+    
     
     init(service: AuthServiceRepository) {
         self.service = service
@@ -26,7 +30,7 @@ class LoginViewModel: ObservableObject {
         state = .loading
         do {
             let appKeyResponse = try await service.createAppKey()
-            let oauthResponse = try await service.createOauthKey(email: "demo", password: "test", appkey: appKeyResponse.appkey)
+            let oauthResponse = try await service.createOauthKey(email: email, password: password, appkey: appKeyResponse.appkey)
             let sessKeyResponse = try await service.createSessKey(oauthUser: oauthResponse.oAuthUser, oauthKey: oauthResponse.oAuthKey)
             state = .success(sessKeyResponse)
         }
