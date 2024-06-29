@@ -25,6 +25,7 @@
 		75325F482C2F6566002E5635 /* SessKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F472C2F6566002E5635 /* SessKeyResponse.swift */; };
 		75325F4A2C2F74AC002E5635 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F492C2F74AC002E5635 /* LoginViewModelTests.swift */; };
 		75325F4C2C2F7622002E5635 /* AuthServiceRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F4B2C2F7622002E5635 /* AuthServiceRepositoryMock.swift */; };
+		75325F502C2FB4C4002E5635 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75325F4E2C2F987B002E5635 /* BookListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		75325F472C2F6566002E5635 /* SessKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessKeyResponse.swift; sourceTree = "<group>"; };
 		75325F492C2F74AC002E5635 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		75325F4B2C2F7622002E5635 /* AuthServiceRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceRepositoryMock.swift; sourceTree = "<group>"; };
+		75325F4E2C2F987B002E5635 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		75325EFE2C2F0081002E5635 = {
 			isa = PBXGroup;
 			children = (
+				75325F4D2C2F9851002E5635 /* Views */,
 				75325F3A2C2F0227002E5635 /* Model */,
 				75325F372C2F01F4002E5635 /* Service */,
 				75325F342C2F01B8002E5635 /* ViewModel */,
@@ -120,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				75325F0A2C2F0081002E5635 /* TimetonicChallengeApp.swift */,
-				75325F0C2C2F0081002E5635 /* LoginView.swift */,
 				75325F0E2C2F0082002E5635 /* Assets.xcassets */,
 				75325F102C2F0082002E5635 /* Preview Content */,
 			);
@@ -182,6 +184,15 @@
 				75325F472C2F6566002E5635 /* SessKeyResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		75325F4D2C2F9851002E5635 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75325F0C2C2F0081002E5635 /* LoginView.swift */,
+				75325F4E2C2F987B002E5635 /* BookListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +332,7 @@
 				75325F0B2C2F0081002E5635 /* TimetonicChallengeApp.swift in Sources */,
 				75325F442C2F19B8002E5635 /* HttpMethod.swift in Sources */,
 				75325F362C2F01D0002E5635 /* LoginViewModel.swift in Sources */,
+				75325F502C2FB4C4002E5635 /* BookListView.swift in Sources */,
 				75325F402C2F0E2D002E5635 /* ServiceError.swift in Sources */,
 				75325F392C2F0204002E5635 /* AuthServiceRepository.swift in Sources */,
 				75325F462C2F5065002E5635 /* OauthKeyResponse.swift in Sources */,
